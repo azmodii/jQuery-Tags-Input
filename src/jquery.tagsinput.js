@@ -173,6 +173,13 @@
       $('#'+id+'_tagsinput .tag').remove();
       $.fn.tagsInput.importTags(this,str);
    }
+   
+	$.fn.destroyTagsInput = function (value) {
+	    $(this).tagsInput = null;
+	    $(this).next('.tagsinput').remove();
+	    $(this).val('');
+	    $(this).show();
+	}
 
 	$.fn.tagsInput = function(options) {
     var settings = jQuery.extend({
